@@ -52,16 +52,19 @@ export class GildedRose {
         continue;
       }
 
-      if (item.name != AGED_BRIE_NAME) {
-        if (item.name != BACKSTAGE_PASSES_NAME) {
-          if (item.quality > MIN_QUALITY && item.name != SULFURAS_NAME) {
-            item.quality = item.quality - 1
-          }
-        } else {
-          item.quality = 0
+      if (item.name == AGED_BRIE_NAME) {
+        if (item.quality < MAX_QUALITY) {
+          item.quality = item.quality + 1;
         }
-      } else if (item.quality < MAX_QUALITY) { // must be Aged Brie
-        item.quality = item.quality + 1
+        continue;
+      }
+
+      if (item.name != BACKSTAGE_PASSES_NAME) {
+        if (item.quality > MIN_QUALITY && item.name != SULFURAS_NAME) {
+          item.quality = item.quality - 1
+        }
+      } else {
+        item.quality = 0
       }
     }
 
