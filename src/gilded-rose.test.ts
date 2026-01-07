@@ -75,6 +75,13 @@ describe('Gilded Rose', () => {
       expect(items[0].sellIn).toBe(11);
     });
 
+    test('if the sellIn is less than 6 and quality is 49, then quality should be incremented to max', () => {
+      const gildedRose = new GildedRose([new Item('Backstage passes to a TAFKAL80ETC concert', 5, 49)]);
+      const items = gildedRose.updateQuality();
+      expect(items[0].quality).toBe(50);
+      expect(items[0].sellIn).toBe(4);
+    });
+
     test('if the sellIn is greater than 11 and quality is less than 50, then increment quality', () => {
       const gildedRose = new GildedRose([new Item('Backstage passes to a TAFKAL80ETC concert', 12, 40)]);
       const items = gildedRose.updateQuality();
