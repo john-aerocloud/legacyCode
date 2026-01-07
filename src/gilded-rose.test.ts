@@ -51,7 +51,7 @@ describe('Gilded Rose', () => {
     // TODO - sellIn tests
   });
 
-  describe('Backstage passes to a TAFKAL80ETC concert', () => {
+  describe.only('Backstage passes to a TAFKAL80ETC concert', () => {
     describe('Quality tests', () => {
       // TODO - need to understand why 50 is threshold - when we understand, use constant
       test('should zero quality for special item Backstage passes to a TAFKAL80ETC concert (when sellIn is 0)', () => {
